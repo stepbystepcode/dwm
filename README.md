@@ -1,4 +1,4 @@
-David's build of dwm
+Peter's build of dwm
 ============================
 [中文版](./README_cn.md)
 
