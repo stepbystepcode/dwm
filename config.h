@@ -94,9 +94,6 @@ static const char *sktogglecmd[]  = { "/home/peter/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-//static const char *setcolemakcmd[]  = { "/home/peter/scripts/setxmodmap-colemak.sh", NULL };
-static const char *setqwertycmd[]  = { "/home/peter/scripts/setxmodmap-qwerty.sh", NULL };
-
 static const char *suspendcmd[]  = { "/home/peter/scripts/suspend.sh", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
@@ -118,16 +115,16 @@ static Key keys[] = {
 	{ 0,                   XK_Print,                spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,    XK_j,                    rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,    XK_k,                    rotatestack,    {.i = -1 } },
-	{ MODKEY,              XK_j,                    focusstack,     {.i = +1 } },
-	{ MODKEY,              XK_k,                    focusstack,     {.i = -1 } },
+	{ MODKEY,              XK_h,                    focusstack,     {.i = +1 } },
+	{ MODKEY,              XK_l,                    focusstack,     {.i = -1 } },
 	{ MODKEY,              XK_n,                    viewtoleft,     {0} },
 	{ MODKEY,              XK_i,                    viewtoright,    {0} },
 	{ MODKEY|ShiftMask,    XK_n,                    tagtoleft,      {0} },
 	{ MODKEY|ShiftMask,    XK_i,                    tagtoright,     {0} },
-	{ MODKEY|ShiftMask,    XK_h,                    incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,    XK_l,                    incnmaster,     {.i = -1 } },
-	{ MODKEY,              XK_h,                    setmfact,       {.f = -0.05} },
-	{ MODKEY,              XK_l,                    setmfact,       {.f = +0.05} },
+	{ MODKEY,              XK_j,                    incnmaster,     {.i = +1 } },
+	{ MODKEY,              XK_k,                    incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,    XK_h,                    setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,    XK_l,                    setmfact,       {.f = +0.05} },
 	{ MODKEY,              XK_u,                    hidewin,        {0} },
 	{ MODKEY|ShiftMask,    XK_u,                    restorewin,     {0} },
 //	{ MODKEY,              XK_o,                    hideotherwins,  {0}},
