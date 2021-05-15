@@ -84,6 +84,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *downloadcmd[]   = { "/home/peter/scripts/downloads.sh",  NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", NULL };
+static const char *ranger[] = { "/home/peter/scripts/ranger.sh", NULL };
 
 static const char *upvol[]   = { "/home/peter/scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/peter/scripts/vol-down.sh",  NULL };
@@ -104,6 +105,7 @@ static Key keys[] = {
 	{ MODKEY,              XK_d,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY,              XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,              XK_c,                    spawn,          {.v = browsercmd } },
+	{ MODKEY,              XK_e,                    spawn,          {.v = ranger } },
 	{ MODKEY|ShiftMask,    XK_p,                    spawn,          {.v = suspendcmd } },
 	{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
