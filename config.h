@@ -17,7 +17,7 @@ static const int smartgaps          = 1;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "JetBrainsMono\ Nerd\ Font\ Mono:size=16" };
+static const char *fonts[]          = { "JetBrainsMono\ Nerd\ Font\ Mono:size=16", "JoyPixels:pixelsize=20:antialias=true:autohint=true" };
 static const char dmenufont[]       = "JetBrainsMono\ Nerd\ Font\ Mono:size=16";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -83,9 +83,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *downloadcmd[]   = { "/home/peter/scripts/downloads.sh",  NULL };
-static const char *browsercmd[]  = { "google-chrome-stable", NULL };
+static const char *browsercmd[]  = { "chromium", NULL };
 static const char *ranger[] = { "/home/peter/scripts/ranger.sh", NULL };
 
+static const char *upkd[]   = { "/home/peter/scripts/asus-keyboard-backlight.sh", "up",  NULL };
+static const char *downkd[]   = { "/home/peter/scripts/asus-keyboard-backlight.sh", "down",  NULL };
+static const char *upsc[]   = { "/home/peter/scripts/asus-backlight.sh", "up",  NULL };
+static const char *downsc[]   = { "/home/peter/scripts/asus-backlight.sh", "down",  NULL };
 static const char *upvol[]   = { "/home/peter/scripts/vol-up.sh",  NULL };
 static const char *downvol[] = { "/home/peter/scripts/vol-down.sh",  NULL };
 static const char *mutevol[] = { "/home/peter/scripts/vol-toggle.sh",  NULL };
@@ -108,9 +112,13 @@ static Key keys[] = {
 	{ MODKEY,              XK_e,                    spawn,          {.v = ranger } },
 	{ MODKEY|ShiftMask,    XK_p,                    spawn,          {.v = suspendcmd } },
 	{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
-	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
-	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
-	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+	{ MODKEY,              XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
+	{ MODKEY,              XF86XK_AudioMute,        spawn,          {.v = mutevol } },
+	{ MODKEY,              XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+	{ MODKEY,              XK_F2,                   spawn,          {.v = downkd } },
+	{ MODKEY,              XK_F3,                   spawn,          {.v = upkd   } },
+	{ MODKEY,              XK_F7,                   spawn,          {.v = downsc } },
+	{ MODKEY,              XK_F8,                   spawn,          {.v = upsc   } },
 	{ MODKEY,              XK_bracketleft,          spawn,          {.v = downvol } },
 	{ MODKEY,              XK_backslash,            spawn,          {.v = mutevol } },
 	{ MODKEY,              XK_bracketright,         spawn,          {.v = upvol   } },
