@@ -193,6 +193,7 @@ static void grabbuttons(Client *c, int focused);
 static void grabkeys(void);
 static void hide(Client *c);
 static void incnmaster(const Arg *arg);
+static int issinglewin(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
 static void manage(Window w, XWindowAttributes *wa);
